@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;  //<-- ignore this for now, it is used to create reusable site layouts
+}
+
+
+@{int a = 1;
+    int b = 1;
+
+    int c = 1;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Fibonacci</title>
+    <link href="~/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+
+        <ul>
+            <li>1</li>
+        </ul>
+         @for (int i = 0; i <25; i++)
+        {
+            c = a + b;
+            a = b;
+            b = c;
+            <ul>
+                <li>@c</li>
+            </ul>
+
+        }
+    </div>
+</body>
+</html>

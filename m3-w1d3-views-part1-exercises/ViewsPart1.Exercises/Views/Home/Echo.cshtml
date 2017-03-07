@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;  //<-- ignore this for now, it is used to create reusable site layouts
+}
+
+
+
+@{
+    int count = 0;
+    string word = string.Empty;
+    if (Request.QueryString.Count == 0)
+    {
+        <span>Please pass the values</span>
+    }
+    else
+    {
+        count = int.Parse(Request.QueryString["count"]);
+        word = Request.QueryString["word"];
+    }
+
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Echo</title>
+    <link href="~/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+
+
+        @for (int i = count; i > 0; i--)
+            {
+            <ul>
+                <li style="font-size:@i%">@word</li>
+            </ul>
+
+        }
+
+    </div>
+</body>
+</html>

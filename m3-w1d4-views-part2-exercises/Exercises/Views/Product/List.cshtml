@@ -1,0 +1,78 @@
+﻿@{
+    Layout = null;
+}
+@model List<Exercises.Models.Product>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List View</title>
+    <link href="~/Content/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>ASP.NET MVC Exercises - Views Part 2: Models</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">List Layout</a></li>
+            <li><a href="#">Tile Layout</a></li>
+            <li><a href="#">Table Layout</a></li>
+
+        </ul>
+
+    </nav>
+    <section>
+
+        @foreach (var product in Model)
+        {
+            <div class="active">
+                <div>
+                    <img src="../../Content/images/@product.ImageName" />
+
+                    <div class="list-group-item">
+                        <ul>
+                            <li>
+                                @product.Name
+                                @if (product.IsTopSeller)
+                                {
+                                    <span style="color: red;">BEST SELLER!</span>
+                                }
+                            </li>
+                            <li>by @product.Manufacturer</li>
+                            <li>$ @product.Price.ToString()</li>
+                            <li>by @product.WeightIbLbs.ToString()</li>
+                            <li class="img-list">
+                                @if (product.AverageRating <= 1)
+                                {
+                                    <img src="../../Content/images/1-star.png" />
+                                }
+                                else if (product.AverageRating <= 2 && product.AverageRating > 1)
+                                {
+                                    <img src="../../Content/images/1-star.png" />
+                                }
+                                else if (product.AverageRating <= 3 && product.AverageRating > 2)
+                                {
+                                    <img src="../../Content/images/2-star.png" />
+                                }
+                                else if (product.AverageRating <= 4 && product.AverageRating > 3)
+                                {
+                                    <img src="../../Content/images/3-star.png" />
+                                }
+                                else
+                                {
+                                    <img class="rating" src="../../Content/images/5-star.png" />
+                                }
+
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </section>
+</body>
+</html>

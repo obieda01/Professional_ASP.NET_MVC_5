@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FizzBuzz</title>
+    <link href="~/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @for (int i = 1; i <= 100; i++)
+        {
+            if (i % 3 == 0 && i % 5 == 0)
+            {
+                <p class="fizzbuzz">FizzBuzz </p>
+            }
+            else if (i % 3 == 0)
+            {
+                <p class="fizz"> Fizz </p>
+            }
+            else if (i % 5 == 0)
+            {
+                <p class="buzz">Buzz </p>
+            }
+            else
+            {
+                <p>@i </p>
+            }
+        }
+    </div>
+</body>
+</html>

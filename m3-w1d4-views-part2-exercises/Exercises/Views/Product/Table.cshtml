@@ -1,0 +1,112 @@
+﻿@{
+    Layout = null;
+}
+@model List<Exercises.Models.Product>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List View</title>
+    <link href="~/Content/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>ASP.NET MVC Exercises - Views Part 2: Models</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">List Layout</a></li>
+            <li><a href="#">Tile Layout</a></li>
+            <li><a href="#">Table Layout</a></li>
+
+        </ul>
+
+    </nav>
+    <section>
+        <table>
+            <tbody>
+                <tr>
+                    <th></th>
+                    @foreach (var product in Model)
+                    {
+                        <td><img src="../../Content/images/@product.ImageName" /></td>
+                    }
+                </tr>
+
+                <tr>
+                    <th></th>
+                    @foreach (var product in Model)
+                    {
+                        <td>
+                            @if (product.IsTopSeller)
+                            {
+                                <span style="color: red;">BEST SELLER!</span>
+                            }
+                        </td>
+                    }
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    @foreach (var product in Model)
+                    {
+                        <td>
+                            by @product.Manufacturer
+                        </td>
+                    }
+                </tr>
+
+                <tr>
+                    <th>Rating</th>
+                    @foreach (var product in Model)
+                    {
+                        <td>
+                            @if (product.AverageRating <= 1)
+                            {
+                                <img src="../../Content/images/1-star.png" />
+                            }
+                            else if (product.AverageRating <= 2 && product.AverageRating > 1)
+                            {
+                                <img src="../../Content/images/1-star.png" />
+                            }
+                            else if (product.AverageRating <= 3 && product.AverageRating > 2)
+                            {
+                                <img src="../../Content/images/2-star.png" />
+                            }
+                            else if (product.AverageRating <= 4 && product.AverageRating > 3)
+                            {
+                                <img src="../../Content/images/3-star.png" />
+                            }
+                            else
+                            {
+                                <img class="rating" src="../../Content/images/5-star.png" />
+                            }
+                        </td>
+                    }
+                </tr>
+            <tr>
+                <th>Mnfr</th>
+                @foreach (var product in Model)
+                {
+                    <td>
+                        $ @product.Price.ToString()
+                    </td>
+                }
+            </tr>
+                
+                <tr>
+                    <th>wt.lbs</th>
+                    @foreach (var product in Model)
+                    {
+                        <td>
+                             @product.WeightIbLbs.ToString()
+                        </td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+</body>
+</html>
