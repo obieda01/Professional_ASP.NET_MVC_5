@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "NewReview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New book Review</h2>
+
+@using (Html.BeginForm("NewReview", "Home", FormMethod.Get))
+{
+    <div class="col-lg-4 input-group">
+
+        <div>
+            @Html.Label("Enter your username", new { @class = "control-label" })
+            <input class="form-control input-sm" required type="text" name="username" />
+        </div><!-- /input-group -->
+
+        <div>
+            @Html.Label("How many stars ?", new { @class = "control-label" })
+            <input class="form-control input-sm" min="0" max="5" required type="text" name="rate" placeholder="0" />
+        </div><!-- /input-group -->
+
+        <div>
+            @Html.Label("Provide a title", new { @class = "control-label" })
+            <input class="form-control input-sm" required type="text" name="title" />
+        </div><!-- /input-group -->
+
+        <div>
+            @Html.Label("Review", new { @class = "control-label" })
+            <textarea class="form-control input-group-lg" required name="review">  </textarea>
+        </div><!-- /input-group -->
+        <br />
+        <div>
+            <div class="col-lg-10 col-lg-offset-2">
+                <br/>
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+}
+
+

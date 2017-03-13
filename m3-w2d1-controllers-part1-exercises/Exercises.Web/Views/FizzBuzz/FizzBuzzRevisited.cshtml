@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "FizzBuzzRevisited";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FizzBuzzRevisited</h2>
+
+<form class="form-horizontal" action="/FizzBuzz/FizzBuzzRevisited" method="post">
+    <fieldset>
+        <legend>Legend</legend>
+        <div class="form-group">
+            <label class="col-lg-2 control-label">Divisable By:</label>
+            <div class="col-lg-10">
+                <input type="text" name="div_by_1" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <label class="col-lg-2 control-label">Divisable By:</label>
+            <div class="col-lg-10">
+                <input type="text" name="div_by_2" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label class="col-lg-2 control-label">Alternative Fizz:</label>
+            <div class="col-lg-10">
+                <input type="text" name="al_fizz" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+
+            @Html.Label("Alternative Buzz:", new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-10 ">
+                @Html.TextBox("al_buzz", "", new { @class = "form-control" })
+            </div>
+        </div>
+
+        @for (int i = 1; i < +5; i++)
+            {
+            <div class="form-group">
+
+                @Html.Label("Number" + i.ToString() + ":", new { @class = "col-lg-2 control-label" })
+                <div class="col-lg-10 ">
+                    @Html.TextBox("num_" + i.ToString(), "", new { @class = "form-control" })
+                </div>
+            </div>
+        }
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

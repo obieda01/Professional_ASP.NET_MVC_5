@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+@using System.Linq;
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ASP.NET MVC - Controllers Day 2 (HTTP POST)</title>
+    <link rel="stylesheet" href="~/Content/theme.css" />
+</head>
+<body>
+    <header>
+        <h1>ASP.NET MVC - Controllers Day 2 (HTTP POST)</h1>
+    </header>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="@Url.Action("Index", "Home")" aria-expanded="true">See all reviews</a></li>
+        <li class=""><a href="@Url.Action("NewReview", "Home")" data-toggle="tab" aria-expanded="false">Submit a review</a></li>
+    </ul>
+
+    <section id="main-content">
+        @RenderBody()
+    </section>
+</body>
+</html>

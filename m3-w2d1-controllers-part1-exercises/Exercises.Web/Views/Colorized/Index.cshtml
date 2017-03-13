@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+@{
+    ViewBag.Title = "Colorized Name";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Enter Name</h2>
+
+@using (Html.BeginForm("colorizedResult", "Colorized", FormMethod.Post))
+{
+    @Html.Label("First name:")<br/>
+    @Html.TextBox("Fname")
+    <br />
+    @Html.Label("Last name:")
+    <br />
+    @Html.TextBox("Lname")
+    <br />
+    <br />
+    <h2>Choose Color</h2>
+    <div >
+        @Html.CheckBox("1", "Red")
+        @Html.Label("Red")
+        <br />
+        @Html.CheckBox("2", "Blue")
+        @Html.Label("Blue")
+        <br />
+        @Html.CheckBox("3", "Green")
+        @Html.Label("Green")
+        <br />
+    </div>
+    <input type="submit" />
+}

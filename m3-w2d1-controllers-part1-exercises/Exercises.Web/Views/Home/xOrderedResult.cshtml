@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "xOrderedResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>xOrderedResult</h2>
+@model List<string>
+
+<div>
+    @foreach (var item in Model)
+    {
+        <h1>@item</h1>
+        <br />
+    }
+
+</div>

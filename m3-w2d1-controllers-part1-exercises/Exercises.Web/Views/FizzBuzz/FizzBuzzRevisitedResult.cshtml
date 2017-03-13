@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "FizzBuzzRevisitedResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<string>
+
+<form class="form-horizontal" action="/FizzBuzz/FizzBuzzRevisited" method="post">
+    <fieldset>
+        <legend>FizzBuzzRevisitedResult</legend>
+        <div class="form-group">
+            @foreach (var item in Model)
+            {
+                @Html.Label(@item, new { @class = "col-lg-2 control-label" })
+                <br/>
+            }
+        </div>
+
+    </fieldset>
+</form>

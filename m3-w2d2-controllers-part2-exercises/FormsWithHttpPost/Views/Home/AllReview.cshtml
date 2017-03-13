@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "AllReview";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using FormsWithHttpPost.Models
+@model List<Review>
+
+
+<img src="~/Content/forDummies.png" alt="Dummy" class="img-circle">
+<h2>Post Review</h2>
+<br />
+
+<table class="table table-striped table-hover ">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><span style="font-weight:bolder">@item.Title</span>
+                @for (int i = 1; i <= item.Rating; i++)
+                {
+                    <img class="img-rate"  src="~/Content/star.png" alt="" />
+                }
+                <br/>
+               By @item.Username on @item.ReviewDate.ToString()<br />
+                @item.Message
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
