@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Page3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Summary", "FavoriteThings", FormMethod.Post))
+{
+
+    <div class="jumbotron col-lg-10">
+
+        <div class="col-lg-10 radio-inline">
+            <label class="">
+                <input type="radio" name="Summer" />
+                Summer
+            </label>
+        </div>
+        <div class="col-lg-10 radio-inline">
+            <label>
+                <input type="radio" name="season" value="Winter" />
+                Winter
+            </label>
+        </div>
+
+
+        <label class="label-default">
+            <input type="radio" name="season" value="Fall" />
+            Fall
+        </label>
+        <label class="label-default">
+            <input type="radio" name="season" value="Spring" />
+            Spring
+        </label>
+        <br />
+        <input type="submit" class="" value="Next" />
+    </div>
+}
+

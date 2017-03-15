@@ -11,12 +11,8 @@ namespace TechElevator.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View("Index");
+            return RedirectToAction("Page1","FavoriteThings");
         }
-
-        public ActionResult WhyUs()
-        {
-            return View("WhyUs");
-        }
+        
     }
 }

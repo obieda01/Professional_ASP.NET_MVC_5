@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Summary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <div class="col-lg-6">@Session["color"]</div>
+    <div class="col-lg-6">@Session["food"]</div>
+    <div class="col-lg-6"> @Session["season"]</div>
+
+</div>

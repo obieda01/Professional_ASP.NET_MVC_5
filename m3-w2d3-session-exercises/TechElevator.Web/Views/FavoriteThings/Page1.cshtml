@@ -4,5 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Page1</h2>
+@using (Html.BeginForm("Page2", "FavoriteThings", FormMethod.Post))
+{
+    <div class="container row">
+        <label class="label-default">What is your favorite color ?</label>
+    </div>
+    <div class="container row">
 
+        <input type="text" class="" name="Answer" />
+    </div><br/>
+    <input type="submit" class="" value="Next" />
+
+}

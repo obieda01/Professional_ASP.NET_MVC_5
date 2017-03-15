@@ -1,0 +1,21 @@
+﻿
+
+@{
+    ViewBag.Title = "Page2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Page3", "FavoriteThings", FormMethod.Post))
+{
+    <div class="container row">
+        <label class="label-default">What is your favorite food ?</label>
+    </div>
+    <div class="container row">
+
+        <input type="text" class="" name="Answer" />
+    </div><br />
+    <input type="submit" class="" value="Next"/>
+}
+
+
